@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CE49841C-E232-4768-A1A0-E74D6C1946C5}</ProjectGuid>
+    <ProjectGuid>{838813F7-C52A-4C46-98F1-4FF27B2DDBBB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -159,17 +160,41 @@
     <Compile Include="Code\App_Start\RouteConfig.cs" />
     <Compile Include="Code\App_Start\Startup.Auth.cs" />
     <Compile Include="Code\Controllers\AccountController.cs" />
+    <Compile Include="Code\Extensions\BundleExtensions.cs" />
     <Compile Include="Code\Controllers\HomeController.cs" />
     <Compile Include="Code\Controllers\ManageController.cs" />
+    <Compile Include="Code\Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Code\Models\AccountViewModels.cs" />
+    <Compile Include="Code\Models\IdentityModels.cs" />
+    <Compile Include="Code\Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\vendor\scripts\angular.min.js" />
-    <Content Include="Content\vendor\scripts\jquery-2.1.4.min.js" />
+    <Content Include="Content\app\common\scripts\constants\regexConstants.js" />
+    <Content Include="Content\app\common\scripts\constants\urlConstants.js" />
+    <Content Include="Content\app\common\scripts\controllers\headerController.js" />
+    <Content Include="Content\app\common\scripts\controllers\navigationController.js" />
+    <Content Include="Content\app\common\scripts\core\app.config.js" />
+    <Content Include="Content\app\common\scripts\core\app.js" />
+    <Content Include="Content\app\common\scripts\core\app.run.js" />
+    <Content Include="Content\app\common\scripts\core\core.js" />
+    <Content Include="Content\app\common\scripts\core\stateConfig\home.config.js" />
+    <Content Include="Content\app\common\scripts\services\assetLoaderService.js" />
+    <Content Include="Content\app\common\scripts\services\dataService.js" />
+    <Content Include="Content\app\common\scripts\services\dateService.js" />
+    <Content Include="Content\app\common\scripts\services\dropzoneService.js" />
+    <Content Include="Content\app\common\scripts\services\httpInterceptorService.js" />
+    <None Include="Content\app\home\Landing.cshtml" />
+    <Content Include="Content\app\home\landingController.js" />
+    <Content Include="Content\vendor\scripts\angular\angular-ui-router.js" />
+    <Content Include="Content\vendor\scripts\angular\angular-1.4.3.js" />
+    <Content Include="Content\vendor\scripts\angular\angular-1.4.3.min.js" />
+    <Content Include="Content\vendor\scripts\jquery\jquery-2.1.4.js" />
+    <Content Include="Content\vendor\scripts\jquery\jquery-2.1.4.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -179,12 +204,16 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Content\app\common\views\Error.cshtml" />
+    <Content Include="Content\app\home\Index.cshtml" />
+    <Content Include="Content\app\common\views\Lockout.cshtml" />
+    <Content Include="Content\app\common\views\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\App_Data\" />
-    <Folder Include="Content\app\common\scripts\" />
+    <Folder Include="Content\app\common\scripts\factories\" />
+    <Folder Include="Content\app\common\scripts\filters\" />
+    <Folder Include="Content\app\common\scripts\providers\" />
     <Folder Include="Content\app\common\styles\" />
-    <Folder Include="Content\vendor\styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -206,7 +235,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50560</DevelopmentServerPort>
+          <DevelopmentServerPort>49787</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50540/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

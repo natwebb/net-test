@@ -1,0 +1,5 @@
+C:\GitRepos\net-test\NetTest.Library\bin\NetTest.Library.dll.config
+C:\GitRepos\net-test\NetTest.Library\bin\NetTest.Library.dll
+C:\GitRepos\net-test\NetTest.Library\bin\NetTest.Library.pdb
+C:\GitRepos\net-test\NetTest.Library\obj\Debug\NetTest.Library.dll
+C:\GitRepos\net-test\NetTest.Library\obj\Debug\NetTest.Library.pdb
