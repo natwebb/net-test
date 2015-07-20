@@ -4,9 +4,7 @@
     angular.module('app.services').service('app.services.httpInterceptorService', [
         '$q',
         '$rootScope',
-        '$cookies',
-        'app.constants.securityValues',
-    function ($q, $rootScope, $cookies, securityValues) {
+    function ($q, $rootScope) {
 
         return {
             response: success,
@@ -26,8 +24,6 @@
         }
 
         function processResponse(resp) {
-            securityValues.IsLoggedIn = ($cookies.USERIDTOKEN !== null && $cookies.USERIDTOKEN !== undefined);
-
             // Process Standard Http Status Codes:  http://www.iana.org/assignments/http-status-codes/http-status-codes.xml
             // 401: Unauthorized
             if (resp.status === 401) {

@@ -6,7 +6,7 @@
         'app.constants.baseUrl',
     function ($http, baseUrl) {
         return {
-            associateTeamMember: function(data) { return $http({ method: 'POST', url: baseUrl + '/Advertisers/AssociateTeamMember/', data: data }); }
+            getMessage: function(id) { return $http({ method: 'GET', url: baseUrl + '/Messages?id=' + id }); }
         };
     }]);
 })(window.angular);

@@ -68,11 +68,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Libraries\MessagesLibrary.cs" />
+    <Compile Include="Models\MessageDetailViewModel.cs" />
+    <Compile Include="Models\MessageBasicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Libraries\" />
-    <Folder Include="Models\" />
     <Folder Include="Translators\" />
   </ItemGroup>
   <PropertyGroup>

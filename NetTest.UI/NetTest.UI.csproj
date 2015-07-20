@@ -160,6 +160,8 @@
     <Compile Include="Code\App_Start\RouteConfig.cs" />
     <Compile Include="Code\App_Start\Startup.Auth.cs" />
     <Compile Include="Code\Controllers\AccountController.cs" />
+    <Compile Include="Code\Controllers\MessagesController.cs" />
+    <Compile Include="Code\Controllers\BaseController.cs" />
     <Compile Include="Code\Extensions\BundleExtensions.cs" />
     <Compile Include="Code\Controllers\HomeController.cs" />
     <Compile Include="Code\Controllers\ManageController.cs" />
@@ -190,6 +192,8 @@
     <Content Include="Content\app\common\scripts\services\httpInterceptorService.js" />
     <None Include="Content\app\home\Landing.cshtml" />
     <Content Include="Content\app\home\landingController.js" />
+    <Content Include="Content\vendor\scripts\angular\angular-cookies.js" />
+    <Content Include="Content\vendor\scripts\angular\angular-cookies.min.js" />
     <Content Include="Content\vendor\scripts\angular\angular-ui-router.js" />
     <Content Include="Content\vendor\scripts\angular\angular-1.4.3.js" />
     <Content Include="Content\vendor\scripts\angular\angular-1.4.3.min.js" />
@@ -218,6 +222,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetTest.Library\NetTest.Library.csproj">
+      <Project>{7CDE8D69-D4B2-431A-B02B-FD5BA68712CA}</Project>
+      <Name>NetTest.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace NC2.CPM.Admin.Shared.Controllers
+namespace NetTest.UI.Code.Controllers
 {
     public class TemplatesController : Controller
     {

@@ -53,3 +53,5 @@ C:\GitRepos\net-test\NetTest.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.csprojResolveAssemblyReference.cache
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.dll
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.pdb
+C:\GitRepos\net-test\NetTest.UI\bin\NetTest.Library.dll
+C:\GitRepos\net-test\NetTest.UI\bin\NetTest.Library.pdb

@@ -24,7 +24,8 @@ namespace NetTest.UI
             var vendorAngular = new ScriptBundle("~/bundles/vendor/angular");
             vendorAngular.Include(
                       "~/Content/vendor/scripts/angular/angular-1.4.3.js",
-                      "~/Content/vendor/scripts/angular/angular-ui-router.js");
+                      "~/Content/vendor/scripts/angular/angular-ui-router.js",
+                      "~/Content/vendor/scripts/angular/angular-cookies.js");
             bundles.Add(vendorAngular);
 
             //App Scripts

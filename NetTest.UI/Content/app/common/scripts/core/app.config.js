@@ -5,7 +5,7 @@
         '$urlRouterProvider',
         '$httpProvider',
     function ($urlRouterProvider, $httpProvider) {
-        //$httpProvider.interceptors.push('app.services.httpInterceptorService');
+        $httpProvider.interceptors.push('app.services.httpInterceptorService');
 
         $urlRouterProvider.otherwise('/');
     }]);
