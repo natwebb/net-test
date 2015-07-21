@@ -6,7 +6,13 @@ namespace NetTest.Business.Models
 {
     public class Message : IMessage
     {
-        public Guid Id;
+        public Message(Guid id, string content)
+        {
+            Id = id;
+            Content = content;
+        }
+
+        public Guid Id { get; set; }
 
         public string Content { get; set; }
 
