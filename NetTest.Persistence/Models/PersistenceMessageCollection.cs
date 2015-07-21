@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 using Microsoft.WindowsAzure.Storage;
@@ -16,33 +17,102 @@ namespace NetTest.Persistence.Models
 
         public async Task<MessageEntity> CreateAsync(Guid id, string content)
         {
-            MessageEntity newMessage = new MessageEntity(id) { Content = content };
-
             try
             {
+                MessageEntity newMessage = new MessageEntity(id) { Content = content };
+
                 MessagesTable.CreateIfNotExists();
 
                 TableOperation insertOperation = TableOperation.Insert(newMessage);
 
                 MessagesTable.Execute(insertOperation);
-            } catch (Exception e)
-            {
-                // ignored
-            }
 
-            return newMessage;
+                return newMessage;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
+        {
+            try
+            {
+                TableOperation retrieveOperation = TableOperation.Retrieve<MessageEntity>("1", id.ToString());
+
+                TableResult retrievedResult = MessagesTable.Execute(retrieveOperation);
+
+                MessageEntity deleteEntity = (MessageEntity)retrievedResult.Result;
+
+                if (deleteEntity != null)
+                {
+                    TableOperation updateOperation = TableOperation.Delete(deleteEntity);
+
+                    MessagesTable.Execute(updateOperation);
+                }
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public async Task<MessageEntity> FindByIdAsync(Guid id)
         {
-            TableOperation retrieveOperation = TableOperation.Retrieve<MessageEntity>("1", id.ToString());
+            try
+            {
+                TableOperation retrieveOperation = TableOperation.Retrieve<MessageEntity>("1", id.ToString());
 
-            return (MessageEntity)MessagesTable.Execute(retrieveOperation).Result;
+                return (MessageEntity) MessagesTable.Execute(retrieveOperation).Result;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
-        public async Task<System.Collections.Generic.IEnumerable<MessageEntity>> GetAllAsync()
+        public async Task<IEnumerable<MessageEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                TableQuery<MessageEntity> query = new TableQuery<MessageEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "1"));
+
+                return MessagesTable.ExecuteQuery(query);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public async Task<MessageEntity> UpdateAsync(Guid id, string content)
+        {
+            try
+            {
+                TableOperation retrieveOperation = TableOperation.Retrieve<MessageEntity>("1", id.ToString());
+
+                TableResult retrievedResult = MessagesTable.Execute(retrieveOperation);
+
+                MessageEntity updateEntity = (MessageEntity) retrievedResult.Result;
+
+                if (updateEntity != null)
+                {
+                    updateEntity.Content = content;
+
+                    TableOperation updateOperation = TableOperation.Replace(updateEntity);
+
+                    MessagesTable.Execute(updateOperation);
+                }
+
+                return updateEntity;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }
