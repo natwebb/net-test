@@ -96,8 +96,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IPersistenceAssetCollection.cs" />
     <Compile Include="Contracts\IPersistenceMessageCollection.cs" />
+    <Compile Include="Entities\AssetEntity.cs" />
     <Compile Include="Entities\MessageEntity.cs" />
+    <Compile Include="Models\PersistenceAssetCollection.cs" />
     <Compile Include="Models\PersistenceMessageCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,18 +1,17 @@
 C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Business.dll.config
 C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Business.dll
 C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Business.pdb
-C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.csprojResolveAssemblyReference.cache
-C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.dll
-C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.pdb
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.Edm.dll
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.OData.dll
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.Services.Client.dll
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.WindowsAzure.Configuration.dll
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.WindowsAzure.Storage.dll
 C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Persistence.dll
+C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Shared.dll
 C:\GitRepos\net-test\NetTest.Business\bin\Newtonsoft.Json.dll
 C:\GitRepos\net-test\NetTest.Business\bin\System.Spatial.dll
 C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Persistence.pdb
+C:\GitRepos\net-test\NetTest.Business\bin\NetTest.Shared.pdb
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.Edm.xml
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.OData.xml
 C:\GitRepos\net-test\NetTest.Business\bin\Microsoft.Data.Services.Client.xml
@@ -55,3 +54,6 @@ C:\GitRepos\net-test\NetTest.Business\bin\ko\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Business\bin\ru\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Business\bin\zh-Hans\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Business\bin\zh-Hant\System.Spatial.resources.dll
+C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.csprojResolveAssemblyReference.cache
+C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.dll
+C:\GitRepos\net-test\NetTest.Business\obj\Debug\NetTest.Business.pdb

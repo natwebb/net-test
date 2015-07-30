@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using NetTest.Business.Contracts;
 using NetTest.Library.Models;
+using NetTest.Shared.Tools;
 
 namespace NetTest.Library.Translators
 {

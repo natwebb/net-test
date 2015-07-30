@@ -50,6 +50,6 @@ C:\GitRepos\net-test\NetTest.Persistence\bin\ko\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Persistence\bin\ru\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Persistence\bin\zh-Hans\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.Persistence\bin\zh-Hant\System.Spatial.resources.dll
-C:\GitRepos\net-test\NetTest.Persistence\obj\Debug\NetTest.Persistence.csprojResolveAssemblyReference.cache
 C:\GitRepos\net-test\NetTest.Persistence\obj\Debug\NetTest.Persistence.dll
 C:\GitRepos\net-test\NetTest.Persistence\obj\Debug\NetTest.Persistence.pdb
+C:\GitRepos\net-test\NetTest.Persistence\obj\Debug\NetTest.Persistence.csprojResolveAssemblyReference.cache

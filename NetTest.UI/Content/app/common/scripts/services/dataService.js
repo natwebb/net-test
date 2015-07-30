@@ -6,7 +6,7 @@
         'app.constants.baseUrl',
     function ($http, baseUrl) {
         return {
-            getMessage: function(id) { return $http({ method: 'GET', url: baseUrl + '/Messages?id=' + id }); }
+            getMessage: function (id) { return $http({ method: 'GET', url: baseUrl + '/Messages?id=' + id }); }
         };
     }]);
 })(window.angular);

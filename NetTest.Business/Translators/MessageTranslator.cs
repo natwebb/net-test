@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NetTest.Business.Models;
-using NetTest.Library.Translators;
 using NetTest.Persistence.Entities;
+using NetTest.Shared.Tools;
 
 namespace NetTest.Business.Translators
 {

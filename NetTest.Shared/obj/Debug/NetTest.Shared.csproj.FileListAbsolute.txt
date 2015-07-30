@@ -1,0 +1,5 @@
+C:\GitRepos\net-test\NetTest.Shared\bin\NetTest.Shared.dll.config
+C:\GitRepos\net-test\NetTest.Shared\bin\NetTest.Shared.dll
+C:\GitRepos\net-test\NetTest.Shared\bin\NetTest.Shared.pdb
+C:\GitRepos\net-test\NetTest.Shared\obj\Debug\NetTest.Shared.dll
+C:\GitRepos\net-test\NetTest.Shared\obj\Debug\NetTest.Shared.pdb

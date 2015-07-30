@@ -41,15 +41,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Swashbuckle.Core">
+      <HintPath>..\packages\Swashbuckle.Core.5.2.1\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -157,9 +166,11 @@
     <Compile Include="Code\App_Start\BundleConfig.cs" />
     <Compile Include="Code\App_Start\FilterConfig.cs" />
     <Compile Include="Code\App_Start\IdentityConfig.cs" />
+    <Compile Include="Code\App_Start\ApiConfig.cs" />
     <Compile Include="Code\App_Start\RouteConfig.cs" />
     <Compile Include="Code\App_Start\Startup.Auth.cs" />
     <Compile Include="Code\Controllers\AccountController.cs" />
+    <Compile Include="Code\Controllers\AssetsController.cs" />
     <Compile Include="Code\Controllers\MessagesController.cs" />
     <Compile Include="Code\Controllers\BaseController.cs" />
     <Compile Include="Code\Extensions\BundleExtensions.cs" />
@@ -199,6 +210,7 @@
     <Content Include="Content\vendor\scripts\angular\angular-1.4.3.min.js" />
     <Content Include="Content\vendor\scripts\jquery\jquery-2.1.4.js" />
     <Content Include="Content\vendor\scripts\jquery\jquery-2.1.4.min.js" />
+    <Content Include="Content\vendor\scripts\misc\dropzone.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

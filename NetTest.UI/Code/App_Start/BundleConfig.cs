@@ -28,6 +28,10 @@ namespace NetTest.UI
                       "~/Content/vendor/scripts/angular/angular-cookies.js");
             bundles.Add(vendorAngular);
 
+            var miscVendor = new ScriptBundle("~/bundles/vendor/misc");
+            miscVendor.Include("~/Content/vendor/scripts/misc/dropzone.js");
+            bundles.Add(miscVendor);
+
             //App Scripts
             var coreAngular = new ScriptBundle("~/bundles/app/coreangular");
             coreAngular.Include(

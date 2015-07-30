@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NetTest.Library.Translators
+namespace NetTest.Shared.Tools
 {
     public static class TranslatorTools
     {
