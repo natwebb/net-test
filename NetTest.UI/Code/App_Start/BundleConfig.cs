@@ -1,4 +1,5 @@
 ﻿using System.Web.Optimization;
+using LibSassNet.Web;
 using NetTest.UI.Code.Extensions;
 
 namespace NetTest.UI
@@ -65,9 +66,16 @@ namespace NetTest.UI
 
         public static void ConfigureStyles(BundleCollection bundles)
         {
-            var css = new StyleBundle("~/bundles/css");
-            css.Include();
-            bundles.Add(css);
+            var cssMinifier = new CssMinify();
+
+            //var css = new StyleBundle("~/bundles/css");
+            //css.Include();
+            //bundles.Add(css);
+
+            var functionalStyles = new SassBundle("~/bundles/app/functionalstyles");
+            functionalStyles.Include("~/Content/app/home/main.scss");
+            functionalStyles.Transforms.Add(cssMinifier);
+            bundles.Add(functionalStyles);
         }
     }
 }

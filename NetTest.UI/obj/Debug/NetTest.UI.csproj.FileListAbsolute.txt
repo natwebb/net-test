@@ -112,3 +112,6 @@ C:\GitRepos\net-test\NetTest.UI\bin\System.Net.Http.Formatting.dll
 C:\GitRepos\net-test\NetTest.UI\bin\System.Web.Http.dll
 C:\GitRepos\net-test\NetTest.UI\bin\System.Net.Http.Formatting.xml
 C:\GitRepos\net-test\NetTest.UI\bin\System.Web.Http.xml
+C:\GitRepos\net-test\NetTest.UI\bin\LibSass.x86.dll
+C:\GitRepos\net-test\NetTest.UI\bin\libsassnet.dll
+C:\GitRepos\net-test\NetTest.UI\bin\libsassnet.Web.dll
