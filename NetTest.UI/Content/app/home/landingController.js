@@ -6,12 +6,34 @@
         'app.services.dataService',
         'app.services.dropzoneService',
     function ($scope, dataService, dropzone) {
+        var canvas = document.getElementById("stageCanvas");
+        var context = canvas.getContext("2d");
+
         //Scope
 
+        init();
+
         //Functions
+        function init() {
+            canvas.addEventListener("click", addStep, false);
+        }
+
+        function addStep(e) {
+            console.log("*---------------------------------------*");
+            console.log("Client: (" + e.clientX + ", " + e.clientY + ")");
+            console.log("Layer: (" + e.layerX + ", " + e.layerY + ")");
+            console.log("Offset: (" + e.offsetX + ", " + e.offsetY + ")");
+            console.log("Page: (" + e.pageX + ", " + e.pageY + ")");
+            console.log("Screen: (" + e.screenX + ", " + e.screenY + ")");
+
+            var coords = [e.layerX, e.layerY];
+            var bottomUpCoords = [coords[0], 150 - coords[1]];
+
+            console.log(coords);
+            console.log(bottomUpCoords);
+        }
+
         function setCanvasBackground(imgSrc) {
-            var canvas = document.getElementById("stageCanvas");
-            var context = canvas.getContext("2d");
             var bg = new Image();
             bg.src = imgSrc;
             bg.onload = function() {
