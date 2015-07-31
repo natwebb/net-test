@@ -8,18 +8,23 @@
     function ($scope, dataService, dropzone) {
         var canvas = document.getElementById("stageCanvas");
         var context = canvas.getContext("2d");
-        var icon = { Url: "", width: 10, height: 10 }; //width and height currently hardcoded to match sample icon
 
         //Scope
-        $scope.steps = [];
+        $scope.stage = {
+            background: { Url: "https://test07162015.blob.core.windows.net/img/user/stage/mario3.jpg", width: 570, height: 373 }, //url, width and height currently hardcoded to match sample background
+            stepIcon: { Url: "https://test07162015.blob.core.windows.net/img/user/step/offline.png", width: 10, height: 10 }, //url, width and height currently hardcoded to match sample icon
+            steps: []
+        };
+        $scope.selectedStep = null;
         init();
 
         //Functions
         function init() {
-            canvas.addEventListener("click", addStep, false);
+            canvas.addEventListener("click", checkClick, false);
+            redrawMap();
         }
 
-        function addStep(e) {
+        function addStep(x, y) {
             //console.log("*---------------------------------------*");
             //console.log("Client: (" + e.clientX + ", " + e.clientY + ")");
             //console.log("Layer: (" + e.layerX + ", " + e.layerY + ")");
@@ -27,38 +32,82 @@
             //console.log("Page: (" + e.pageX + ", " + e.pageY + ")");
             //console.log("Screen: (" + e.screenX + ", " + e.screenY + ")");
 
-            var pos = { x: e.layerX - (icon.width/2), y: e.layerY - (icon.height/2) };
+            var pos = { x: x - ($scope.stage.stepIcon.width / 2), y: y - ($scope.stage.stepIcon.height / 2) };
 
-            var stepImg = new Image();
-            stepImg.src = icon.Url;
+            var step = { x: pos.x, y: pos.y, reverseY: $scope.stage.background.height - pos.y };
 
-            var step = { img: stepImg, x: pos.x, y: pos.y, reverseY: 150 - pos.y }; //NOTE the hardcoded 150, this is the height of the canvas
-
-            $scope.steps.push(step);
-
-            console.log($scope.steps);
+            $scope.stage.steps.push(step);
             $scope.$apply();
 
-            stepImg.onload = function () {
-                drawStep(step);
+            drawStep(step);
+        }
+
+        function checkClick(e) {
+            var pos = { x: e.layerX, y: e.layerY };
+
+            var chosen = false;
+
+            $scope.stage.steps.forEach(function (step) {
+                if (pos.x >= step.x && pos.x <= step.x + 10 && pos.y >= step.y && pos.y <= step.y + 10) {
+                    $scope.selectedStep = step;
+                    $scope.$apply();
+                    chosen = true;
+                }
+            });
+
+            if (chosen === false) {
+                if ($scope.selectedStep === null) {
+                    addStep(e.layerX, e.layerY);
+                } else {
+                    moveStep(e.layerX, e.layerY);
+                }
             }
         }
 
-        function drawStep(step) {
-            context.drawImage(step.img, step.x, step.y);
+        function drawBackground() {
+            var bg = new Image();
+            bg.src = $scope.stage.background.Url;
+            bg.onload = function () {
+                context.drawImage(bg, 0, 0, $scope.stage.background.width, $scope.stage.background.height);
+                drawSteps();
+            };
+        }
+
+        function drawStep(step, img) {
+            console.log(img);
+            if (img === null || img === undefined) {
+                var stepImg = new Image();
+                stepImg.src = $scope.stage.stepIcon.Url;
+
+                stepImg.onload = function() {
+                    context.drawImage(stepImg, step.x, step.y);
+                };
+            } else {
+                context.drawImage(img, step.x, step.y);
+            }
         }
 
         function drawSteps() {
-            $scope.steps.forEach(drawStep);
+            var img = new Image();
+            img.src = $scope.stage.stepIcon.Url;
+            img.onload = function() {
+                $scope.stage.steps.forEach(function(step) { drawStep(step, img); });
+            }
         }
 
-        function setCanvasBackground(imgSrc) {
-            var bg = new Image();
-            bg.src = imgSrc;
-            bg.onload = function() {
-                context.drawImage(bg, 0, 0, 300, 150);
-                drawSteps();
-            };
+        function moveStep(newX, newY) {
+            $scope.selectedStep.x = newX - ($scope.stage.stepIcon.width / 2);
+            $scope.selectedStep.y = newY - ($scope.stage.stepIcon.height / 2);
+            $scope.$apply();
+            redrawMap();
+            $scope.selectedStep = null;
+            $scope.$apply();
+        }
+
+        function redrawMap() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            drawBackground();
+            drawSteps();
         }
 
         //Upload Handlers
@@ -68,7 +117,8 @@
         dropzone.new("div#stageDropzone",
             { url: "/Assets?Container=img&Type=stage&Owner=user", acceptedFiles: "image/*", previewTemplate: "<div />" },
             function (file, data, xhrprog) {
-                setCanvasBackground(data.Url);
+                $scope.stage.background.Url = data.Url;
+                drawBackground();
             },
             errorHandler, completeHandler
         );
@@ -76,7 +126,7 @@
         dropzone.new("div#stepDropzone",
             { url: "/Assets?Container=img&Type=step&Owner=user", acceptedFiles: "image/*", previewTemplate: "<div />" },
             function (file, data, xhrprog) {
-                icon.Url = data.Url;
+                $scope.stage.stepIcon.Url = data.Url;
             },
             errorHandler, completeHandler
         );
