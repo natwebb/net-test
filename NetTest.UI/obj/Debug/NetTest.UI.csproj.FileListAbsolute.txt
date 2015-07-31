@@ -107,7 +107,6 @@ C:\GitRepos\net-test\NetTest.UI\bin\zh-Hant\System.Spatial.resources.dll
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.csprojResolveAssemblyReference.cache
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.dll
 C:\GitRepos\net-test\NetTest.UI\obj\Debug\NetTest.UI.pdb
-C:\GitRepos\net-test\NetTest.UI\bin\Swashbuckle.Core.dll
 C:\GitRepos\net-test\NetTest.UI\bin\System.Net.Http.Formatting.dll
 C:\GitRepos\net-test\NetTest.UI\bin\System.Web.Http.dll
 C:\GitRepos\net-test\NetTest.UI\bin\System.Net.Http.Formatting.xml

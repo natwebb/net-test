@@ -1,3 +1,7 @@
 ﻿<h1>Make a Stage!</h1>
-<div id="stageDropzone">Upload Stage</div>
+<div id="stageDropzone">Upload Stage Map</div>
+<div id="stepDropzone">Upload Step Icon</div>
 <canvas id="stageCanvas"></canvas>
+<div ng-repeat="step in steps">
+    <p>({{ step.x }}, {{ step.reverseY }})</p>
+</div>

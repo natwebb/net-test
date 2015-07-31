@@ -50,9 +50,6 @@
       <HintPath>..\packages\libsassnet.Web.2.1.3.1\lib\net40\libsassnet.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Swashbuckle.Core">
-      <HintPath>..\packages\Swashbuckle.Core.5.2.1\lib\net40\Swashbuckle.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -175,7 +172,6 @@
     <Compile Include="Code\App_Start\BundleConfig.cs" />
     <Compile Include="Code\App_Start\FilterConfig.cs" />
     <Compile Include="Code\App_Start\IdentityConfig.cs" />
-    <Compile Include="Code\App_Start\ApiConfig.cs" />
     <Compile Include="Code\App_Start\RouteConfig.cs" />
     <Compile Include="Code\App_Start\Startup.Auth.cs" />
     <Compile Include="Code\Controllers\AccountController.cs" />
